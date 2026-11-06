@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thread drawing</title>
+  <script>
+    // light or dark, from the system setting
+    document.documentElement.setAttribute('data-theme',
+      matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  </script>
+  <style>
+    html, body { margin: 0; height: 100%; }
+    body { background: #F2EEEA; }
+    html[data-theme="dark"] body { background: #0F1218; }
+    #heroCanvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  </style>
+</head>
+<body>
+  <canvas id="heroCanvas" aria-label="Draw with thread on a t-shirt"></canvas>
+  <script src="thread-drawing.js"></script>
+</body>
+</html>
